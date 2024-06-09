@@ -5,6 +5,7 @@ metadata:
   name: currencyservice
   labels:
     app: currencyservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -59,6 +60,7 @@ metadata:
   name: currencyservice
   labels:
     app: currencyservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -79,6 +81,7 @@ metadata:
   name: loadgenerator
   labels:
     app: loadgenerator
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -164,6 +167,7 @@ metadata:
   name: productcatalogservice
   labels:
     app: productcatalogservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -217,6 +221,7 @@ metadata:
   name: productcatalogservice
   labels:
     app: productcatalogservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -237,6 +242,7 @@ metadata:
   name: checkoutservice
   labels:
     app: checkoutservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -299,6 +305,7 @@ metadata:
   name: checkoutservice
   labels:
     app: checkoutservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -319,6 +326,7 @@ metadata:
   name: shippingservice
   labels:
     app: shippingservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -372,6 +380,7 @@ metadata:
   name: shippingservice
   labels:
     app: shippingservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -392,6 +401,7 @@ metadata:
   name: cartservice
   labels:
     app: cartservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -446,6 +456,7 @@ metadata:
   name: cartservice
   labels:
     app: cartservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -466,6 +477,7 @@ metadata:
   name: redis-cart
   labels:
     app: redis-cart
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -520,6 +532,7 @@ metadata:
   name: redis-cart
   labels:
     app: redis-cart
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -535,6 +548,7 @@ metadata:
   name: emailservice
   labels:
     app: emailservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -590,6 +604,7 @@ metadata:
   name: emailservice
   labels:
     app: emailservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -610,6 +625,7 @@ metadata:
   name: paymentservice
   labels:
     app: paymentservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -663,6 +679,7 @@ metadata:
   name: paymentservice
   labels:
     app: paymentservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -683,6 +700,7 @@ metadata:
   name: frontend
   labels:
     app: frontend
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -776,6 +794,7 @@ metadata:
   name: frontend
   labels:
     app: frontend
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -791,6 +810,7 @@ metadata:
   name: frontend-external
   labels:
     app: frontend
+  namespace: boutique
 spec:
   type: LoadBalancer
   selector:
@@ -811,6 +831,7 @@ metadata:
   name: recommendationservice
   labels:
     app: recommendationservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -868,6 +889,7 @@ metadata:
   name: recommendationservice
   labels:
     app: recommendationservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
@@ -888,6 +910,7 @@ metadata:
   name: adservice
   labels:
     app: adservice
+  namespace: boutique
 spec:
   selector:
     matchLabels:
@@ -943,6 +966,7 @@ metadata:
   name: adservice
   labels:
     app: adservice
+  namespace: boutique
 spec:
   type: ClusterIP
   selector:
