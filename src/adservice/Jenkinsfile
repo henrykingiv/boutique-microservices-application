@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         DOCKER_HUB_CREDENTIALS = 'docker-creds'
-        DOCKER_IMAGE = 'henrykingiv/kops:adservice'
-        DOCKER_REGISTRY_URL = 'https://hub.docker.com/repository/docker/henrykingiv/kops/general'
+        DOCKER_IMAGE = 'henrykingiv/kops'
+        DOCKER_REGISTRY_URL = 'https://hub.docker.com/repository/docker/henrykingiv/kops/'
         K8S_CREDENTIALS = 'k8s-token'
     }
 
