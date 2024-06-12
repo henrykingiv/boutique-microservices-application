@@ -3,7 +3,8 @@ pipeline {
 
     environment {
         DOCKER_HUB_CREDENTIALS = 'docker-creds'
-        DOCKER_IMAGE = 'henrykingiv/kops'
+        DOCKER_IMAGE = 'henrykingiv/kops:adservice'
+        DOCKER_REGISTRY_URL = 'https://hub.docker.com/repository/docker/henrykingiv/kops/general'
         K8S_CREDENTIALS = 'k8s-token'
     }
 
@@ -17,7 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE}:latest")
+                    docker.build("${DOCKER_IMAGE}:latest", "src/adservice")
                 }
             }
         }
