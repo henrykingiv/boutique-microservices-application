@@ -24,8 +24,8 @@ pipeline {
         stage('Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-creds', toolName: 'docker', url: 'https://hub.docker.com/repositories/henrykingiv') {
-                        docker.image("${DOCKER_IMAGE}:latest").push()
+                    withDockerRegistry(credentialsId: 'docker-creds', toolName: 'docker') {
+                        sh "docker push "${DOCKER_IMAGE}:latest"
                     }
                 }
             }
