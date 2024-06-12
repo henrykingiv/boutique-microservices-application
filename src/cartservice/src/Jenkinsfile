@@ -1,0 +1,63 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_HUB_CREDENTIALS = 'docker-creds'
+        DOCKER_IMAGE = 'henrykingiv/microservice-b'
+        K8S_CREDENTIALS = 'k8s-token'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/henrykingiv/boutique-microservices-application.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    docker.build("${DOCKER_IMAGE}:latest")
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    docker.image("${DOCKER_IMAGE}:latest").inside {
+                        sh 'run-your-tests.sh'
+                    }
+                }
+            }
+        }
+
+        stage('Push') {
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_HUB_CREDENTIALS) {
+                        docker.image("${DOCKER_IMAGE}:latest").push()
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    withKubeConfig([credentialsId: K8S_CREDENTIALS]) {
+                        sh '''
+                        kubectl set image deployment/microservice-b microservice-b=${DOCKER_IMAGE}:latest
+                        '''
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
