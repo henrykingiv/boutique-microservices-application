@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_HUB_CREDENTIALS = 'docker-creds'
-        DOCKER_IMAGE = 'henrykingiv/microservice-a'
+        DOCKER_IMAGE = 'henrykingiv/kops'
         K8S_CREDENTIALS = 'k8s-token'
     }
 
