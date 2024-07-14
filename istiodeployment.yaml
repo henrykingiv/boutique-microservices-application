@@ -461,7 +461,7 @@ metadata:
   name: cartservice
   labels:
     app: cartservice
-  namespace: istio
+  namespace: istio-system
 spec:
   type: ClusterIP
   selector:
@@ -799,7 +799,7 @@ metadata:
   name: frontend
   labels:
     app: frontend
-  namespace: istio
+  namespace: istio-system
 spec:
   type: ClusterIP
   selector:
@@ -975,7 +975,7 @@ metadata:
   name: adservice
   labels:
     app: adservice
-  namespace: istio
+  namespace: istio-system
 spec:
   type: ClusterIP
   selector:
