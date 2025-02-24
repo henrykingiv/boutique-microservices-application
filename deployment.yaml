@@ -1,4 +1,10 @@
 ---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: currencyservice
+  namespace: istio
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -73,8 +79,8 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: currencyservice
-  namespace: istio
+  name: loadgenerator
+  namespace: istio    
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -160,7 +166,7 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: loadgenerator
+  name: productcatalogservice
   namespace: istio
 ---
 apiVersion: apps/v1
@@ -236,7 +242,7 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: productcatalogservice
+  name: checkoutservice
   namespace: istio
 ---
 apiVersion: apps/v1
@@ -321,7 +327,7 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: checkoutservice
+  name: shippingservice
   namespace: istio
 ---
 apiVersion: apps/v1
@@ -397,7 +403,7 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: shippingservice
+  name: cartservice
   namespace: istio
 ---
 apiVersion: apps/v1
@@ -471,12 +477,6 @@ spec:
     port: 7070
     targetPort: 7070
 ---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: cartservice
-  namespace: istio
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -547,6 +547,12 @@ spec:
   - name: tcp-redis
     port: 6379
     targetPort: 6379
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: emailservice
+  namespace: istio
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -623,7 +629,7 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: emailservice
+  name: paymentservice
   namespace: istio
 ---
 apiVersion: apps/v1
@@ -699,7 +705,7 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: paymentservice
+  name: frontend
   namespace: istio
 ---
 apiVersion: apps/v1
@@ -828,7 +834,7 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: frontend
+  name: recommendationservice
   namespace: istio
 ---
 apiVersion: apps/v1
@@ -910,7 +916,7 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: recommendationservice
+  name: adservice
   namespace: istio
 ---
 apiVersion: apps/v1
@@ -984,10 +990,5 @@ spec:
   - name: grpc
     port: 9555
     targetPort: 9555
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: adservice
-  namespace: istio
+
 # [END gke_release_kubernetes_manifests_microservices_demo]
